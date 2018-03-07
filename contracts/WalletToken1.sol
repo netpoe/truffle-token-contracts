@@ -1,15 +1,13 @@
 pragma solidity ^0.4.15;
 
-import 'zeppelin-solidity/contracts/token/ERC20/StandardToken.sol';
+import './Buyable.sol';
 
-contract WalletToken1 is StandardToken {
-    string public name = 'WalletToken1';
-    string public symbol = 'WT1';
-    uint8 public decimals = 4;
-    uint public INITIAL_SUPPLY = 1000000;
-
-    function WalletToken1() public {
-        totalSupply_ = INITIAL_SUPPLY;
-        balances[msg.sender] = INITIAL_SUPPLY;
-    }
+contract WalletToken1 is Buyable(1000000, 4, 0.05 ether, 'WT1', 'WalletToken1') {
+    
+    function WalletToken1() public {}
+    
 }
+
+
+
+
